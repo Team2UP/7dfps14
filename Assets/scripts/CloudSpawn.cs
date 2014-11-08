@@ -20,7 +20,8 @@ public class CloudSpawn : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(0.5f, 2f));
+			//yield return new WaitForSeconds(Random.Range(0.5f, 2f));
+			yield return new WaitForSeconds(Random.Range(1f, 3f));
 
             Instantiate(cloudRes, transform.position, transform.rotation);
         }

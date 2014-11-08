@@ -6,7 +6,7 @@ public class CloudMovement : MonoBehaviour
 
     public float endPos = -8.0f;
     private bool alive = false;
-    private float smooth = 50f;
+	private float smooth = 50f;
     private Vector3 newPosition;
     private float stepSize = 0.5f;
 
