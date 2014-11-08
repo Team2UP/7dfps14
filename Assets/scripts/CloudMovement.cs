@@ -4,16 +4,16 @@ using System.Collections;
 public class CloudMovement : MonoBehaviour
 {
 
-    public float startPos = 90, endPos = -8.0f;
+    public float endPos = -8.0f;
     private bool alive = false;
-    private float smooth = 100.0f;
+    private float smooth = 50f;
     private Vector3 newPosition;
+    private float stepSize = 0.5f;
 
     // Use this for initialization
     void Start()
     {
         alive = true;
-        transform.position = new Vector3(transform.position.x, transform.position.y, startPos);
     }
 
     // Update is called once per frame
@@ -30,7 +30,7 @@ public class CloudMovement : MonoBehaviour
     private void _Move()
     {
         newPosition = transform.position;
-        newPosition.z -= 1;
+        newPosition.z -= stepSize;
         transform.position = Vector3.Lerp(transform.position, newPosition, smooth * Time.deltaTime);
     }
 }
