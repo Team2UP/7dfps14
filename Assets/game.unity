@@ -160,6 +160,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100ea27e78b17004f97a1eca71735664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &108845219
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+  m_RootGameObject: {fileID: 1152796942}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
+--- !u!1001 &133552098
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+  m_RootGameObject: {fileID: 1807559856}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &306043358
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,6 +460,45 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1 &504864635
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+  m_PrefabInternal: {fileID: 682384988}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 504864637}
+  - 114: {fileID: 504864636}
+  m_Layer: 0
+  m_Name: MountainSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: -771928, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &504864636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 644b4f7937449a04b9f251ddeea265c0,
+    type: 2}
+  m_PrefabInternal: {fileID: 682384988}
+  m_GameObject: {fileID: 504864635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe2c7a5d9c5ea5d49a6aacced8a77050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &504864637
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+  m_PrefabInternal: {fileID: 682384988}
+  m_GameObject: {fileID: 504864635}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8, y: -2.5, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &573809947
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,10 +545,50 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 573809947}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 99}
+  m_LocalPosition: {x: .107226372, y: .174808502, z: 99}
   m_LocalScale: {x: 10.8704529, y: 10.8704529, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
+--- !u!1001 &682384988
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+  m_RootGameObject: {fileID: 504864635}
+  m_IsPrefabParent: 0
+  m_IsExploded: 1
 --- !u!1 &852559422
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,6 +941,45 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 100ea27e78b17004f97a1eca71735664, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1152796942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+  m_PrefabInternal: {fileID: 108845219}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1152796943}
+  - 114: {fileID: 1152796944}
+  m_Layer: 0
+  m_Name: MountainSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: -771928, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1152796943
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+  m_PrefabInternal: {fileID: 108845219}
+  m_GameObject: {fileID: 1152796942}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2.5, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!114 &1152796944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 644b4f7937449a04b9f251ddeea265c0,
+    type: 2}
+  m_PrefabInternal: {fileID: 108845219}
+  m_GameObject: {fileID: 1152796942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe2c7a5d9c5ea5d49a6aacced8a77050, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1223830956
@@ -1142,6 +1340,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100ea27e78b17004f97a1eca71735664, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1807559856
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+  m_PrefabInternal: {fileID: 133552098}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1807559858}
+  - 114: {fileID: 1807559857}
+  m_Layer: 0
+  m_Name: MountainSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: -771928, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1807559857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 644b4f7937449a04b9f251ddeea265c0,
+    type: 2}
+  m_PrefabInternal: {fileID: 133552098}
+  m_GameObject: {fileID: 1807559856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe2c7a5d9c5ea5d49a6aacced8a77050, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1807559858
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 644b4f7937449a04b9f251ddeea265c0, type: 2}
+  m_PrefabInternal: {fileID: 133552098}
+  m_GameObject: {fileID: 1807559856}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8, y: -2.5, z: 100}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
 --- !u!1 &1923717175
 GameObject:
   m_ObjectHideFlags: 0
