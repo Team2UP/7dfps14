@@ -8,7 +8,7 @@ public class CloudMovement : MonoBehaviour
     private bool alive = false;
 	private float smooth = 50f;
     private Vector3 newPosition;
-    private float stepSize = 0.5f;
+    private float stepSize = 1f;
 
     // Use this for initialization
     void Start()
