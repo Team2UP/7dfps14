@@ -1,4 +1,22 @@
-﻿using UnityEngine;
+﻿
+
+This is an error;
+// I purposely added this error so you can see it xD
+// the only thing left are: 
+//    - score
+//    - player life
+//    - gameover screen (whatever is good here. Up to you. You can either show 
+//				"game over press space" and it restarts. or blank scene with those texts) ;)
+//    - and music (there are some music in the sounds folder. The one is a soft calm sound, 
+//				good for the main menu screen which YOU SHOULD DEFINITELY CHECK OUT! the other is a wind sound. if Possible, can you mix it
+//				with the music. But the wind is only heard when the clouds and mountains are moving)
+//    - Polish I guess (specially the main menu part). But it's a jam, so it's understandable xD
+// 
+//
+// Those are the only things left I guess. All the other things are done :)
+
+
+using UnityEngine;
 using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
@@ -15,7 +33,7 @@ public class PlayerMovement : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col) 
 	{
 		if (col.transform.position.z <= transform.position.z) {
-			Debug.Log ("ENTER");
+			Debug.Log ("LIFE--");
 		}
 
 	}

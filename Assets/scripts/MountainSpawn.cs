@@ -22,7 +22,7 @@ public class MountainSpawn : MonoBehaviour {
 		while (true)
 		{
 			//yield return new WaitForSeconds(Random.Range(0.5f, 2f));
-			yield return new WaitForSeconds(Random.Range(1.5f, 3f));
+			yield return new WaitForSeconds(Random.Range(2f, 4f));
 			
 			int randomMountain = Random.Range(1,3);
 			if(randomMountain == 1) Instantiate(mountainRes1, transform.position, transform.rotation);
