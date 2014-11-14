@@ -1,6 +1,6 @@
 ﻿
 
-This is an error;
+//This is an error;
 // I purposely added this error so you can see it xD
 // the only thing left are: 
 //    - score
@@ -20,20 +20,26 @@ using UnityEngine;
 using System.Collections;
 
 public class PlayerMovement : MonoBehaviour {
-    private float smooth = 50f;
+    private float _smooth = 50f;
     Vector3 newPos;
 
-
+    private int _playerHealth = 100;
 
 	// Use this for initialization
 	void Start () {  
 	
 	}
 
-	void OnTriggerEnter2D(Collider2D col) 
-	{
-		if (col.transform.position.z <= transform.position.z) {
-			Debug.Log ("LIFE--");
+	void OnTriggerEnter2D(Collider2D col)
+    {
+        Debug.Log("collision with " + col.name);
+		if (col.transform.position.z >= transform.position.z) {
+            Debug.Log("hit");
+            _playerHealth -= 10;
+            if (_playerHealth <= 0) {
+                Debug.Log("DEAD - Game Over");
+                Time.timeScale = 0;
+            }
 		}
 
 	}
@@ -45,10 +51,10 @@ public class PlayerMovement : MonoBehaviour {
         if (Input.GetAxis("Horizontal") < 0 && transform.position.x > -12)
         {
             newPos = new Vector3(transform.position.x + 0.5f * Input.GetAxis("Horizontal"), transform.position.y, transform.position.z);
-            transform.position = Vector3.Lerp(transform.position, newPos, smooth * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, newPos, _smooth * Time.deltaTime);
         } else if (Input.GetAxis("Horizontal") > 0 && transform.position.x < 12) {
             newPos = new Vector3(transform.position.x + 0.5f * Input.GetAxis("Horizontal"), transform.position.y, transform.position.z);
-            transform.position = Vector3.Lerp(transform.position, newPos, smooth * Time.deltaTime);
+            transform.position = Vector3.Lerp(transform.position, newPos, _smooth * Time.deltaTime);
         }
 	}
 }
