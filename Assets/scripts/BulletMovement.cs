@@ -32,7 +32,7 @@ public class BulletMovement : MonoBehaviour
             {
                 Destroy(col.gameObject);
                 Destroy(gameObject);
-                Highscore._selfRef.lastScore += 10;
+                Highscore.Instance.lastScore += 10;
             }
         }
     }

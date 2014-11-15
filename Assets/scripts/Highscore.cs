@@ -6,18 +6,30 @@ public class Highscore : MonoBehaviour
 
     public int lastScore;
     public int highScore;
-    public static Highscore _selfRef;
+    public static Highscore Instance;
+    TextMesh highscoreText;
+    MeshRenderer scoreTextChild;
+    TextMesh scoreTextMesh;
 
-    GUIStyle centeredStyle;
 
     void Awake()
     {
-        DontDestroyOnLoad(gameObject);
-        _selfRef = this;
+
+        if (Instance) DestroyImmediate(gameObject);
+        else
+        {
+            DontDestroyOnLoad(gameObject);
+            Instance = this;
+            highscoreText = GetComponent<TextMesh>();
+            scoreTextChild = transform.GetChild(0).GetComponent<MeshRenderer>();
+            scoreTextMesh = scoreTextChild.GetComponent<TextMesh>();
+        }
+
     }
     // Use this for initialization
     void Start()
     {
+
         lastScore = 0;
         highScore = 0;
     }
@@ -25,16 +37,17 @@ public class Highscore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        highscoreText.text = "Highscore: " + highScore;
+        if (Application.loadedLevel == 0) scoreTextChild.enabled = false;
+        else
+        {
+            scoreTextChild.enabled = true;
+            scoreTextMesh.text = "Score: " + lastScore;
+        }
     }
 
     void OnGUI()
     {
-        centeredStyle = GUI.skin.GetStyle("Label");
-        centeredStyle.alignment = TextAnchor.UpperRight;
-        GUI.Label(new Rect((Screen.width), 100, 200, 100), "Score: " + (int)lastScore, centeredStyle);
-        centeredStyle.alignment = TextAnchor.UpperLeft;
-        GUI.Label(new Rect((Screen.width), 100, 200, 100), "<color=black>Highest Score: " + (int)highScore + "</color>", centeredStyle);
 
     }
 }
