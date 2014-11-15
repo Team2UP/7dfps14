@@ -8,6 +8,7 @@ public class Highscore : MonoBehaviour
     public int highScore;
     public static Highscore Instance;
     TextMesh highscoreText;
+    MeshRenderer highscoreTextMesh;
     MeshRenderer scoreTextChild;
     TextMesh scoreTextMesh;
 
@@ -21,6 +22,7 @@ public class Highscore : MonoBehaviour
             DontDestroyOnLoad(gameObject);
             Instance = this;
             highscoreText = GetComponent<TextMesh>();
+            highscoreTextMesh = highscoreText.GetComponent<MeshRenderer>();
             scoreTextChild = transform.GetChild(0).GetComponent<MeshRenderer>();
             scoreTextMesh = scoreTextChild.GetComponent<TextMesh>();
         }
@@ -38,9 +40,14 @@ public class Highscore : MonoBehaviour
     void Update()
     {
         highscoreText.text = "Highscore: " + highScore;
-        if (Application.loadedLevel == 0) scoreTextChild.enabled = false;
+        if (Application.loadedLevel == 0)
+        {
+            highscoreTextMesh.enabled = true;
+            scoreTextChild.enabled = false;
+        }
         else
         {
+            highscoreTextMesh.enabled = false;
             scoreTextChild.enabled = true;
             scoreTextMesh.text = "Score: " + lastScore;
         }
