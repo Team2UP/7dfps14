@@ -19,42 +19,67 @@
 using UnityEngine;
 using System.Collections;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour
+{
     private float _smooth = 50f;
     Vector3 newPos;
 
     private int _playerHealth = 100;
+    private Object restartText;
+    private bool enableRestart = false;
+    private bool _once;
 
-	// Use this for initialization
-	void Start () {  
-	
-	}
-
-	void OnTriggerEnter2D(Collider2D col)
+    // Use this for initialization
+    void Awake()
     {
-        Debug.Log("collision with " + col.name);
-		if (col.transform.position.z >= transform.position.z) {
-            Debug.Log("hit");
+        restartText = Resources.Load("prefabs/Press Space");
+    }
+
+    void OnTriggerStay2D(Collider2D col)
+    {
+        if (col.transform.position.z <= transform.position.z)
+        {
+            Destroy(col.gameObject);
+            Debug.Log("hit with " + col.name + " " + col.transform.position.z);
             _playerHealth -= 10;
-            if (_playerHealth <= 0) {
-                Debug.Log("DEAD - Game Over");
-                Time.timeScale = 0;
+        }
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (_playerHealth <= 0 && !enableRestart) // player dead 
+        {
+            Debug.Log("DEAD - Game Over");
+            Time.timeScale = 0;
+            StartCoroutine(_HandleRestart());
+        }
+        else if (enableRestart) // reload level
+        {
+            Debug.Log("ANY KEY");
+            if (Input.anyKey)
+            {
+                Application.LoadLevel(0);
             }
-		}
-
-	}
-
-	
-	// Update is called once per frame
-	void Update () {
-		// controls
-        if (Input.GetAxis("Horizontal") < 0 && transform.position.x > -12)
+        } // controls 
+        else if (Input.GetAxis("Horizontal") < 0 && transform.position.x > -12)
         {
             newPos = new Vector3(transform.position.x + 0.5f * Input.GetAxis("Horizontal"), transform.position.y, transform.position.z);
             transform.position = Vector3.Lerp(transform.position, newPos, _smooth * Time.deltaTime);
-        } else if (Input.GetAxis("Horizontal") > 0 && transform.position.x < 12) {
+        }
+        else if (Input.GetAxis("Horizontal") > 0 && transform.position.x < 12)
+        {
             newPos = new Vector3(transform.position.x + 0.5f * Input.GetAxis("Horizontal"), transform.position.y, transform.position.z);
             transform.position = Vector3.Lerp(transform.position, newPos, _smooth * Time.deltaTime);
         }
-	}
+    }
+
+    IEnumerator _HandleRestart()
+    {
+        enableRestart = true;
+        if (!_once) Instantiate(restartText, new Vector3(transform.position.x, transform.position.y, transform.position.z + 20), transform.rotation);
+        _once = true;
+        yield return new WaitForSeconds(0.3f);
+    }
 }
