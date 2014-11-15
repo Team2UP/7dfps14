@@ -6,6 +6,7 @@ public class BulletSpawner : MonoBehaviour {
 
 	private bool trigger = false;
     public AudioClip shoot;
+    private bool isShooting = false;
 	
 	void Awake()
 	{
@@ -21,11 +22,17 @@ public class BulletSpawner : MonoBehaviour {
 	void Update()
 	{
 
-		if (Input.GetKeyDown (KeyCode.Space)) 
+		if (Input.GetKeyDown (KeyCode.Space) && !isShooting) 
 		{
-			Instantiate(bulletRes, transform.position, transform.rotation);
-            audio.PlayOneShot(shoot);
+            StartCoroutine(Shoot());
 		}
 	}
 
+    IEnumerator Shoot() {
+        isShooting = true;
+        Instantiate(bulletRes, transform.position, transform.rotation);
+        audio.PlayOneShot(shoot);
+        yield return new WaitForSeconds(0.3f);
+        isShooting = false;
+    }
 }
