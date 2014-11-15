@@ -5,6 +5,7 @@ public class BulletSpawner : MonoBehaviour {
 	private Object bulletRes;
 
 	private bool trigger = false;
+    public AudioClip shoot;
 	
 	void Awake()
 	{
@@ -23,6 +24,7 @@ public class BulletSpawner : MonoBehaviour {
 		if (Input.GetKeyDown (KeyCode.Space)) 
 		{
 			Instantiate(bulletRes, transform.position, transform.rotation);
+            audio.PlayOneShot(shoot);
 		}
 	}
 

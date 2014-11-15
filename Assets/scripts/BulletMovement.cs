@@ -9,6 +9,7 @@ public class BulletMovement : MonoBehaviour
     private float smooth = 50f;
     private Vector3 newPosition;
     private float stepSize = 1.5f;
+    public AudioClip hit;
 
     // Use this for initialization
     void Start()
@@ -30,8 +31,9 @@ public class BulletMovement : MonoBehaviour
         {
             if (col.transform.position.z - transform.position.z <= 10 || transform.position.z - col.transform.position.z <= 10)
             {
+                audio.PlayOneShot(hit);
                 Destroy(col.gameObject);
-                Destroy(gameObject);
+                StartCoroutine(DestroyMe());
                 Highscore.Instance.lastScore += 10;
             }
         }
@@ -53,5 +55,10 @@ public class BulletMovement : MonoBehaviour
         newPosition = transform.position;
         newPosition.z += stepSize;
         transform.position = Vector3.Lerp(transform.position, newPosition, smooth * Time.deltaTime);
+    }
+
+    IEnumerator DestroyMe() {
+        yield return new WaitForSeconds(hit.length);
+        Destroy(gameObject);
     }
 }

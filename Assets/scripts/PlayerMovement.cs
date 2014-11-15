@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour
     private bool enableRestart = false;
     private bool _once;
 
+    public AudioClip hurt;
+
     // Use this for initialization
     void Awake()
     {
@@ -39,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (col.transform.position.z <= transform.position.z)
         {
+            audio.PlayOneShot(hurt);
             Destroy(col.gameObject);
             _playerHealth -= 10;
         }
@@ -61,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (Input.anyKey)
             {
+                //Sound.Instance.audio.clip = Sound.Instance.intro;
                 Application.LoadLevel(0);
             }
         } // controls 

@@ -45,6 +45,7 @@ public class MaineMenuScript : MonoBehaviour
         }
         else if (Input.GetKeyUp(KeyCode.Space) && transform.position.x == 0)
         {
+            //Sound.Instance.audio.clip = Sound.Instance.bgm;
             Application.LoadLevel(1);
         }
 
