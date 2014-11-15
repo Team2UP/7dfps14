@@ -50,7 +50,10 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_playerHealth <= 0 && !enableRestart) // player dead 
         {
+            Debug.Log("Last Score: " + Highscore._selfRef.lastScore);
+            Debug.Log("Highscore: " + Highscore._selfRef.highScore);
             if (Highscore._selfRef.highScore < Highscore._selfRef.lastScore) Highscore._selfRef.highScore = Highscore._selfRef.lastScore;
+            Debug.Log("Highscore update: " + Highscore._selfRef.highScore);
             Time.timeScale = 0;
             StartCoroutine(_HandleRestart());
         }

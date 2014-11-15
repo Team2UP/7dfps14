@@ -30,7 +30,6 @@ public class BulletMovement : MonoBehaviour
         {
             if (col.transform.position.z - transform.position.z <= 10 || transform.position.z - col.transform.position.z <= 10)
             {
-                Debug.Log("HIT ENEMY");
                 Destroy(col.gameObject);
                 Destroy(gameObject);
                 Highscore._selfRef.lastScore += 10;
