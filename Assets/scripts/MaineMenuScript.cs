@@ -19,7 +19,7 @@ public class MaineMenuScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.LeftArrow) && moveLeft == false)
+        if (Input.GetAxis("Horizontal") < 0 && moveLeft == false)
         {
             if (position <= -1)
             {
@@ -31,7 +31,7 @@ public class MaineMenuScript : MonoBehaviour
                 position--;
             }
         }
-        else if (Input.GetKeyUp(KeyCode.RightArrow) && moveRight == false)
+        else if (Input.GetAxis("Horizontal") > 0 && moveRight == false)
         {
             if (position >= 1)
             {
