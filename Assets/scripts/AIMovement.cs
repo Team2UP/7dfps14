@@ -21,6 +21,9 @@ public class AIMovement : MonoBehaviour {
 	private float tick, tick2; // tick = zindex is 90 // tick2 = zindex is 50
 	private int zIndex = 1; // zIndex... first the enemy is on z=90 then it will move to z=50 and stop there for a few second
 
+    int health = 2;
+    private Collider2D _lastHit;
+
 	
 	// Use this for initialization
 	void Start () {  
@@ -58,11 +61,14 @@ public class AIMovement : MonoBehaviour {
 					}
 				}
 			}
-		}
-
+        }
 
 	}
-	
+
+    void OnTriggerStay2D(Collider2D col)
+    {
+
+    }
 	
 	// Update is called once per frame
 	void Update () {

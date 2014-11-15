@@ -40,7 +40,6 @@ public class PlayerMovement : MonoBehaviour
         if (col.transform.position.z <= transform.position.z)
         {
             Destroy(col.gameObject);
-            Debug.Log("hit with " + col.name + " " + col.transform.position.z);
             _playerHealth -= 10;
         }
 
@@ -51,13 +50,12 @@ public class PlayerMovement : MonoBehaviour
     {
         if (_playerHealth <= 0 && !enableRestart) // player dead 
         {
-            Debug.Log("DEAD - Game Over");
+            if (Highscore._selfRef.highScore < Highscore._selfRef.lastScore) Highscore._selfRef.highScore = Highscore._selfRef.lastScore;
             Time.timeScale = 0;
             StartCoroutine(_HandleRestart());
         }
         else if (enableRestart) // reload level
         {
-            Debug.Log("ANY KEY");
             if (Input.anyKey)
             {
                 Application.LoadLevel(0);
