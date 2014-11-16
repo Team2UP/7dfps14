@@ -33,7 +33,7 @@ public class Highscore : MonoBehaviour
     {
 
         lastScore = 0;
-        highScore = 0;
+        highScore = PlayerPrefs.GetInt("Highscore");
     }
 
     // Update is called once per frame
@@ -43,6 +43,7 @@ public class Highscore : MonoBehaviour
         if (Application.loadedLevel == 0)
         {
             highscoreTextMesh.enabled = true;
+            lastScore = 0;
             scoreTextChild.enabled = false;
         }
         else
